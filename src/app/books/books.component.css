@@ -1,0 +1,36 @@
+  :host {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+  }
+
+  .dividedbackground {
+    padding: 10px;
+    display: inline-flexbox;
+    flex-grow: 2;
+    width: 50%;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row{
+      display: flex;
+      flex-direction: row;
+  }
+    
+  .degrade {
+    background: rgb(133,60,212);
+    background: linear-gradient(180deg, rgba(133,60,212,1) 0%, rgba(164,240,255,1) 100%);
+  }
+
+.book {
+    flex-grow: 3;   
+}
+
+  .book img {
+    width: 200px;
+    box-shadow: 0px 0px 15px #959595;
+}
