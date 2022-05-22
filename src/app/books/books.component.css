@@ -1,14 +1,25 @@
-  :host {
+ :host {
       width: 100%;
       display: flex;
       flex-direction: row;
   }
 
+  ::ng-deep .mat-grid-tile-content {
+      flex-direction: column !important;
+    }
+
   .dividedbackground {
     padding: 10px;
     display: inline-flexbox;
     flex-grow: 2;
-    width: 50%;
+    width: 60%;
+    align-content: center;
+  }
+
+  .degrade img {
+    width: 25%;
+    margin: 0px 10px 0px 0px;
+    border-radius: 10px;
   }
 
   .column {
@@ -23,14 +34,36 @@
     
   .degrade {
     background: rgb(133,60,212);
+    font-size: 16px;
+    width: 40% !important;
     background: linear-gradient(180deg, rgba(133,60,212,1) 0%, rgba(164,240,255,1) 100%);
   }
 
-.book {
-    flex-grow: 3;   
-}
+
+  .bookimg {
+    border-radius: 20px;
+    margin: 0px 20px 0px 0px;
+    width: 200px;
+  }
+
+  .fundodegrade {
+    background: #eee;
+    border-radius: 20px;
+    box-shadow: 0px 15px 0px #6028a269, 0px 25px 0px #6028a269;
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .book {
+      flex-grow: 3;   
+  }
 
   .book img {
     width: 200px;
-    box-shadow: 0px 0px 15px #959595;
-}
+    border-radius: 10px;
+  }
+
+  .pencil {
+    position: absolute;
+    right: 0;
+  }

@@ -3,51 +3,32 @@
 -->
 
 <div class="dividedbackground">
-    <mat-grid-list cols="3" rowHeight="340px">
+    <mat-grid-list cols="6" rowHeight="370px">
         <mat-grid-tile class="book column" *ngFor="let book of books; let i = index">
             <img src='{{book.imagem}}' />
-            <h4>{{book.name}}</h4>
-            <span>{{book.preco}}</span>
-            <button [class.selected]="book === selectedBook" type="button" (click)="onSelect(book)">
+            <b>{{book.name}}</b>
+            <span>R$ {{book.preco}}</span>
+            <button class="pencil" [class.selected]="book === selectedBook" type="button" (click)="onSelect(book); modal.toggle()">
                 <svg style="width:24px;height:24px" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M16.84,2.73C16.45,2.73 16.07,2.88 15.77,3.17L13.65,5.29L18.95,10.6L21.07,8.5C21.67,7.89 21.67,6.94 21.07,6.36L17.9,3.17C17.6,2.88 17.22,2.73 16.84,2.73M12.94,6L4.84,14.11L7.4,14.39L7.58,16.68L9.86,16.85L10.15,19.41L18.25,11.3M4.25,15.04L2.5,21.73L9.2,19.94L8.96,17.78L6.65,17.61L6.47,15.29" />
                 </svg>
             </button>
         </mat-grid-tile>
     </mat-grid-list>
-
-     <!-- Next Steps -->
-     <h2>Next Steps</h2>
-     <p>What do you want to do next with your app?</p>
-   
-     <input type="hidden" #selection>
-   
-     <div class="card-container">
-       <button class="card card-small" (click)="selection.value = 'component'" tabindex="0">
-         <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-         <span>New Component</span>
-       </button>
-     </div>
 </div>
 
-<div class="dividedbackground degrade">
-    <div *ngIf="selectedBook">
-        <h2>{{selectedBook.name | uppercase}} Details</h2>
+<app-modal #modal>
+  <div *ngIf="selectedBook">
+    <img class="bookimg" align="left" src='{{selectedBook.imagem}}' />
 
-        
-        <img src='{{selectedBook.imagem}}' />
-
-        <div>id: {{selectedBook.id}}</div>
-        <div>
-          <label for="hero-name">Hero name: </label>
-          <input id="hero-name" [(ngModel)]="selectedBook.name" placeholder="name">
-      
-          <span>id: {{selectedBook.id}}</span>
-          <span>Nome: {{selectedBook.name}}</span>
-          <span>Sinopse: {{selectedBook.sinopse}}</span>
-          <span>Autor: {{selectedBook.autor}}</span>
-          <span>Generos: {{selectedBook.generos}}</span>
-          <span>Preco: {{selectedBook.preco}}</span>
-        </div>
-  </div>
+    <h2>{{selectedBook.name}}</h2>
+    <p><b>ID:</b> {{selectedBook.id}}</p>
+    <p><label for="hero-name"><b>Título: </b></label>
+      <input id="hero-name" [(ngModel)]="selectedBook.name" placeholder="name"> </p>
+  
+    <p><b>Sinopse:</b> {{selectedBook.sinopse}}</p>
+    <p><b>Autor:</b> {{selectedBook.autor}}</p>
+    <p><b>Generos:</b> {{selectedBook.generos}}</p>
+    <p><b>Preco:</b> R${{selectedBook.preco}}</p>   
 </div>
+</app-modal>

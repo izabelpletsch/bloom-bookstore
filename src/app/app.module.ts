@@ -6,11 +6,13 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BooksComponent } from './books/books.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BooksComponent
+    BooksComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
