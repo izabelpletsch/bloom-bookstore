@@ -26,7 +26,15 @@
 
   .banner {
     height: 500px;
-    background: url('https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374');
+    background: url("../assets/banner.jpg");
+    color: #fff;
+    font-family: Poppins Black;
+    font-size: 40pt;
+  }
+
+  .banner > img {
+    height: 100%;
+    opacity: 0.8;
   }
 
   .toolbar {
